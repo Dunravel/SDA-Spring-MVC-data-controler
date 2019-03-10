@@ -41,8 +41,10 @@ public class MainController {
 
     @GetMapping("/delete/{name}")
     public void deleteClient(@PathVariable("name") String name){
-        Client client = clientRepository.findClientByFirstName(name);
-        clientRepository.delete(client);
+//        Client client = clientRepository.findClientByFirstName(name);
+//        clientRepository.delete(client);
+        List<Client> clients = clientRepository.findAllByFirstName(name);
+        clientRepository.deleteAll(clients);
     }
 
 }
