@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pl.sda.spring.mvc.mvcdatacontroler.persistance.Client;
 import pl.sda.spring.mvc.mvcdatacontroler.persistance.ClientAddress;
 import pl.sda.spring.mvc.mvcdatacontroler.persistance.PrivateCar;
+import pl.sda.spring.mvc.mvcdatacontroler.persistance.SharedCar;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +12,10 @@ import java.util.List;
 @Service
 public class ClientTestDataService {
     public List<Client> getClients() {
+
+        SharedCar sharedCar = new SharedCar("Hyundai",1300L);
+
+
         Client c1 = new Client("Robert", "Silverberg");
         ClientAddress clientAddress1 = new ClientAddress("Sciegiennego 69/83");
         c1.setClientAddress(clientAddress1);
@@ -18,6 +23,7 @@ public class ClientTestDataService {
         PrivateCar privateCar12 = new PrivateCar("Mitsubishi", 1100L);
         List<PrivateCar> privateCars1 = Arrays.asList(privateCar11,privateCar12);
         c1.setPrivateCarList(privateCars1);
+        c1.setSharedCars(Arrays.asList(sharedCar));
 
         Client c2 = new Client("Gal","Anonim");
         ClientAddress clientAddress2 = new ClientAddress("Adama Bochenka 20");
@@ -31,6 +37,7 @@ public class ClientTestDataService {
         Client c3 = new Client("Stephen","King");
         ClientAddress clientAddress3= new ClientAddress("Dark Tower 1");
         c3.setClientAddress(clientAddress3);
+        c3.setSharedCars(Arrays.asList(sharedCar));
 
         return Arrays.asList(c1,c2,c3);
     }
