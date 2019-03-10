@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import pl.sda.spring.mvc.mvcdatacontroler.persistance.Client;
-import pl.sda.spring.mvc.mvcdatacontroler.persistance.ClientAddressRepository;
 import pl.sda.spring.mvc.mvcdatacontroler.persistance.ClientRepository;
 import pl.sda.spring.mvc.mvcdatacontroler.tools.ClientTestDataService;
 

@@ -1,8 +1,7 @@
 package pl.sda.spring.mvc.mvcdatacontroler.persistance;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Client {
@@ -14,6 +13,9 @@ public class Client {
 
     @OneToOne(cascade=CascadeType.ALL)
     private ClientAddress clientAddress;
+
+
+    private List<PrivateCar> privateCarList;
 
     public Client(){
 
@@ -46,5 +48,13 @@ public class Client {
 
     public void setClientAddress(ClientAddress clientAddress) {
         this.clientAddress = clientAddress;
+    }
+
+    public List<PrivateCar> getPrivateCarList() {
+        return privateCarList;
+    }
+
+    public void setPrivateCarList(List<PrivateCar> privateCarList) {
+        this.privateCarList = privateCarList;
     }
 }
