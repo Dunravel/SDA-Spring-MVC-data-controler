@@ -14,7 +14,7 @@ public class Client {
     @OneToOne(cascade=CascadeType.ALL)
     private ClientAddress clientAddress;
 
-
+    @OneToMany(cascade = CascadeType.ALL)
     private List<PrivateCar> privateCarList;
 
     public Client(){
