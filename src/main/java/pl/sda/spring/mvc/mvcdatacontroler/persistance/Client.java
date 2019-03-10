@@ -10,12 +10,13 @@ public class Client {
     private Long id;
     private String firstName;
     private String lastName;
-
     @OneToOne(cascade=CascadeType.ALL)
     private ClientAddress clientAddress;
-
     @OneToMany(cascade = CascadeType.ALL)
     private List<PrivateCar> privateCarList;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<SharedCar> sharedCars;
+
 
     public Client(){
 
@@ -56,5 +57,13 @@ public class Client {
 
     public void setPrivateCarList(List<PrivateCar> privateCarList) {
         this.privateCarList = privateCarList;
+    }
+
+    public List<SharedCar> getSharedCars() {
+        return sharedCars;
+    }
+
+    public void setSharedCars(List<SharedCar> sharedCars) {
+        this.sharedCars = sharedCars;
     }
 }
