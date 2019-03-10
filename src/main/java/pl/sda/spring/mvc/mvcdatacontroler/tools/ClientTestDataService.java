@@ -30,7 +30,7 @@ public class ClientTestDataService {
 
         Client c3 = new Client("Stephen","King");
         ClientAddress clientAddress3= new ClientAddress("Dark Tower 1");
-        c2.setClientAddress(clientAddress3);
+        c3.setClientAddress(clientAddress3);
 
         return Arrays.asList(c1,c2,c3);
     }
